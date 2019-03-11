@@ -1,0 +1,6 @@
+framework module Pods_maksat_gramTests {
+  umbrella header "Pods-maksat_gramTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
