@@ -54,7 +54,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let post = posts[indexPath.row]
         let user = post["author"] as! PFUser
-        cell.usernameLabel.text = user.username
+        cell.usernameLabel.text = String(user.username!) + ": "
         cell.commentLabel.text = (post["comment"] as! String)
         
         let imageFile = post["image"] as! PFFileObject
@@ -65,5 +65,13 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         return cell
     }
+    
+    @IBAction func logOutButton(_ sender: Any)
+    {
+        PFUser.logOut()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
 

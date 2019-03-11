@@ -15,6 +15,8 @@ class ThirdViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var commentTextField: UITextField!
     
+
+    
     @IBAction func submitButton(_ sender: Any)
     {
         let post = PFObject(className: "Posts")
@@ -32,6 +34,19 @@ class ThirdViewController: UIViewController, UIImagePickerControllerDelegate, UI
             {
                 self.dismiss(animated: true, completion: nil)
                 print("Saved")
+                if self.savedView.alpha == 0.0
+                {
+                    UIView.animate(withDuration: 1, delay: 0.2, options: .curveEaseOut, animations: {
+                        self.savedView.alpha = 1.0
+                    })
+                }
+                else
+                {
+                    UIView.animate(withDuration: 1, delay: 0.2, options: .curveEaseOut, animations: {
+                        self.savedView.alpha = 0.0
+                    })
+                }
+                
             }
             else
             {
@@ -69,8 +84,20 @@ class ThirdViewController: UIViewController, UIImagePickerControllerDelegate, UI
         dismiss(animated: true, completion: nil)
     }
     
+    
+    @IBAction func backButton(_ sender: Any)
+    {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBOutlet weak var savedView: UIView!
+    
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.savedView.alpha = 0.0
+        
     }
 }

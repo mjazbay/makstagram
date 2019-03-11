@@ -14,6 +14,7 @@ class FirstViewController: UIViewController
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
     @IBAction func loginButton(_ sender: Any)
     {
@@ -30,6 +31,7 @@ class FirstViewController: UIViewController
             else
             {
                 print("Error occured: \(error?.localizedDescription)")
+                self.errorLabel.text = error?.localizedDescription
             }
         }
     }
@@ -47,6 +49,7 @@ class FirstViewController: UIViewController
             else
             {
                 print("Error occured: \(error?.localizedDescription)")
+                self.errorLabel.text = error?.localizedDescription
             }
         }
     }
