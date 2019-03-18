@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0556EBAD223F41E70011BF36 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0556EBAC223F41E70011BF36 /* CommentCell.swift */; };
+		0556EBAF223F871F0011BF36 /* AddCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0556EBAE223F871F0011BF36 /* AddCommentCell.swift */; };
+		0556EBB1223FB1A80011BF36 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0556EBB0223FB1A80011BF36 /* ProfileViewController.swift */; };
 		05D40FBC2235B61400F4F216 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D40FBB2235B61400F4F216 /* FirstViewController.swift */; };
 		05D40FBE2235B61F00F4F216 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D40FBD2235B61F00F4F216 /* SecondViewController.swift */; };
 		05D40FC02235BD1D00F4F216 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05D40FBF2235BD1D00F4F216 /* Image.xcassets */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0556EBAC223F41E70011BF36 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		0556EBAE223F871F0011BF36 /* AddCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentCell.swift; sourceTree = "<group>"; };
+		0556EBB0223FB1A80011BF36 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		05D40FBB2235B61400F4F216 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		05D40FBD2235B61F00F4F216 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		05D40FBF2235BD1D00F4F216 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
@@ -132,7 +138,10 @@
 			children = (
 				05DF0F9B2231FD120021DBD2 /* AppDelegate.swift */,
 				05DF0F9F2231FD120021DBD2 /* Main.storyboard */,
+				0556EBB0223FB1A80011BF36 /* ProfileViewController.swift */,
+				0556EBAC223F41E70011BF36 /* CommentCell.swift */,
 				05D40FBB2235B61400F4F216 /* FirstViewController.swift */,
+				0556EBAE223F871F0011BF36 /* AddCommentCell.swift */,
 				05D40FC32236085B00F4F216 /* postCell.swift */,
 				05D40FBD2235B61F00F4F216 /* SecondViewController.swift */,
 				05D40FC12235CEDB00F4F216 /* ThirdViewController.swift */,
@@ -383,6 +392,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -392,6 +402,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,11 +417,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0556EBAF223F871F0011BF36 /* AddCommentCell.swift in Sources */,
 				05D40FBE2235B61F00F4F216 /* SecondViewController.swift in Sources */,
 				05DF0F9C2231FD120021DBD2 /* AppDelegate.swift in Sources */,
 				05D40FC22235CEDB00F4F216 /* ThirdViewController.swift in Sources */,
 				05D40FBC2235B61400F4F216 /* FirstViewController.swift in Sources */,
 				05D40FC42236085C00F4F216 /* postCell.swift in Sources */,
+				0556EBB1223FB1A80011BF36 /* ProfileViewController.swift in Sources */,
+				0556EBAD223F41E70011BF36 /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

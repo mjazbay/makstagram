@@ -8,6 +8,7 @@ target 'maksat_gram' do
   # Pods for maksat_gram
   pod "Parse"
   pod "AlamofireImage"
+  pod "MessageInputBar"
 
   target 'maksat_gramTests' do
     inherit! :search_paths

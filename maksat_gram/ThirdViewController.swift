@@ -32,21 +32,19 @@ class ThirdViewController: UIViewController, UIImagePickerControllerDelegate, UI
         { (success, error) in
             if success
             {
-                self.dismiss(animated: true, completion: nil)
                 print("Saved")
-                if self.savedView.alpha == 0.0
-                {
-                    UIView.animate(withDuration: 1, delay: 0.2, options: .curveEaseOut, animations: {
-                        self.savedView.alpha = 1.0
-                    })
-                }
-                else
-                {
-                    UIView.animate(withDuration: 1, delay: 0.2, options: .curveEaseOut, animations: {
+                self.savedView.alpha = 0.0
+                //fade in
+                UIView.animate(withDuration: 3, delay: 0.2, options: .curveLinear, animations: {
+                    self.savedView.alpha = 1.0
+                }) { (finished) in
+                    //fade out
+                    UIView.animate(withDuration: 3, delay: 0.2, options: .curveEaseOut, animations: {
                         self.savedView.alpha = 0.0
                     })
                 }
-                
+               // self.dismiss(animated: true, completion: nil)
+            
             }
             else
             {
@@ -77,9 +75,9 @@ class ThirdViewController: UIViewController, UIImagePickerControllerDelegate, UI
         //RESIZING the IMAGE USING ALAMO FIRE IMAGE
         let image = info[.editedImage] as! UIImage
         let size = CGSize(width: 300, height: 300)
-        let scaledImage = image.af_imageScaled(to: size)
+        let scaledImage = image.af_imageAspectScaled(toFill: size)
         
-        imageView.image = scaledImage
+        imageView.image = scaledImage 
         
         dismiss(animated: true, completion: nil)
     }
@@ -91,8 +89,8 @@ class ThirdViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     
-    @IBOutlet weak var savedView: UIView!
     
+    @IBOutlet weak var savedView: UIImageView!
     
     override func viewDidLoad()
     {
