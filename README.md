@@ -14,14 +14,14 @@ The following **required** functionality is completed:
 
 The following **bonus** features are implemented:
 
-- [in progress] User can add a profile picture. (2pts)
-- [in progress] Profile pictures are shown for posts and comments. (2pts)
+- [x] User can add a profile picture. (2pts)
+- [x] Profile pictures are shown for posts and comments. (2pts)
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://g.recordit.co/0c5fUyAUrP.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/OgGsiSteQ3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 
