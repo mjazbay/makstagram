@@ -48,7 +48,7 @@ class ThirdViewController: UIViewController, UIImagePickerControllerDelegate, UI
             }
             else
             {
-                //print("Error Saving: \(error?.localizedDescription)")
+                print("Error Saving: \(error?.localizedDescription)")
             }
         }
     }

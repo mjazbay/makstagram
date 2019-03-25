@@ -54,8 +54,23 @@ class FirstViewController: UIViewController
         }
     }
     
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+//        let Tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+//        view.addGestureRecognizer(Tap)
     }
+    
+//    func dismissKeyboard()
+//    {
+//        view.endEditing(true)
+//    }
+    @IBAction func dismissKeyboard(_ sender: Any)
+    {
+        view.endEditing(true)
+    }
+    
+
 }

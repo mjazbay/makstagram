@@ -77,7 +77,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="Cxx-jk-Zbx"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Wn5-uH-1da" appends="YES" id="LBo-kV-CtH"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="errorLabel" destination="bzb-rc-mnD" id="Lf5-iL-fdy"/>
@@ -87,6 +91,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vcG-4W-fFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Wn5-uH-1da">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="KYo-ah-tsc" id="pJg-6W-oqt"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-670" y="489"/>
         </scene>
@@ -314,7 +323,7 @@
             </objects>
             <point key="canvasLocation" x="-2447" y="3911"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Profile-->
         <scene sceneID="iEz-iB-39x">
             <objects>
                 <viewController id="lp2-oZ-bRB" customClass="ProfileViewController" customModule="maksat_gram" customModuleProvider="target" sceneMemberID="viewController">
@@ -322,42 +331,111 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="R3x-YD-bhD">
-                                <rect key="frame" x="16" y="195" width="340" height="226"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="R3x-YD-bhD">
+                                <rect key="frame" x="67" y="147" width="241" height="189"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="T3m-Di-sMO" appends="YES" id="4hC-3w-QQH"/>
-                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eg6-is-Jq9">
-                                <rect key="frame" x="12" y="462" width="95" height="30"/>
+                                <rect key="frame" x="67" y="385" width="95" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <state key="normal" title="Upload Image"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="2yI-xj-UGW" appends="YES" id="Mww-La-Gl3"/>
+                                </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xud-cR-MK9">
+                                <rect key="frame" x="261" y="385" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitProfilePic:" destination="lp2-oZ-bRB" eventType="touchUpInside" id="p9s-vZ-Rkr"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="submitted" translatesAutoresizingMaskIntoConstraints="NO" id="tTE-Ti-tCy">
+                                <rect key="frame" x="147" y="444" width="80" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="S8q-AG-Xci"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rm8-1c-tsy"/>
+                    <navigationItem key="navigationItem" title="Profile" id="rm8-1c-tsy">
+                        <barButtonItem key="rightBarButtonItem" title="My Posts" id="W1u-oR-2qc">
+                            <connections>
+                                <segue destination="iCJ-bF-FZq" kind="show" identifier="ViewMyPosts" id="OI9-Vg-wDu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="profilePicImageView" destination="R3x-YD-bhD" id="rxR-ik-xDl"/>
+                        <outlet property="submitIcon" destination="tTE-Ti-tCy" id="Adp-hW-b7L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4mp-za-amd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="T3m-Di-sMO">
+                <tapGestureRecognizer id="2yI-xj-UGW">
                     <connections>
-                        <action selector="uploadProfilePic:" destination="lp2-oZ-bRB" id="pc1-pd-5vd"/>
+                        <action selector="uploadProfilePic:" destination="lp2-oZ-bRB" id="WZk-sK-Noz"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1301.5999999999999" y="2982.4587706146931"/>
         </scene>
-        <!--Item-->
+        <!--My Posts View Controller-->
+        <scene sceneID="DIS-zr-eQc">
+            <objects>
+                <viewController id="iCJ-bF-FZq" customClass="myPostsViewController" customModule="maksat_gram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J0q-pl-C0c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uu0-KY-HT8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myPostsCell" rowHeight="155" id="OhD-6W-DJB" customClass="myPostsCell" customModule="maksat_gram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="155"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OhD-6W-DJB" id="OwK-kj-Nne">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="154.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="vry-Jf-s4G">
+                                                    <rect key="frame" x="91" y="5" width="192" height="144"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="vry-Jf-s4G" secondAttribute="bottom" constant="5.5" id="1Ou-gV-Jfj"/>
+                                                <constraint firstItem="vry-Jf-s4G" firstAttribute="top" secondItem="OwK-kj-Nne" secondAttribute="top" constant="5" id="IUf-Ry-hUE"/>
+                                                <constraint firstAttribute="trailing" secondItem="vry-Jf-s4G" secondAttribute="trailing" constant="92" id="pC7-3P-S7d"/>
+                                                <constraint firstItem="vry-Jf-s4G" firstAttribute="leading" secondItem="OwK-kj-Nne" secondAttribute="leading" constant="91" id="tz5-pb-jwq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="myPostImageView" destination="vry-Jf-s4G" id="xZ3-Qr-Gns"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="yTY-Ou-Wiz"/>
+                    </view>
+                    <connections>
+                        <outlet property="myPostsTableView" destination="uu0-KY-HT8" id="19v-hH-5eq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lca-fd-0Ln" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1301.5999999999999" y="3910.794602698651"/>
+        </scene>
+        <!--Profile-->
         <scene sceneID="NPI-tF-JAq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XLe-Qk-vRK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="noZ-oU-1Je"/>
+                    <tabBarItem key="tabBarItem" title="Profile" id="noZ-oU-1Je"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sE7-Gz-1gL">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -391,11 +469,11 @@
             </objects>
             <point key="canvasLocation" x="-670" y="1272"/>
         </scene>
-        <!--Item-->
+        <!--Feed-->
         <scene sceneID="Kg9-oq-cS7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AcI-CA-nof" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="bYR-10-g1m"/>
+                    <tabBarItem key="tabBarItem" title="Feed" id="bYR-10-g1m"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1bg-2R-4su">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
