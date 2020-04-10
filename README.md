@@ -5,22 +5,22 @@ This is an Instagram clone with a custom Parse backend that allows a user to pos
 The following features are implemented:
 ## User Stories
 
-- [x] User stays logged in across restarts. (1pt)
-- [x] User can log out. (1pt)
-- [x] User can view comments on a post. (3pts)
-- [x] User can add a new comment. (5pts)
+- [x] User stays logged in across restarts. 
+- [x] User can log out. 
+- [x] User can view comments on a post. 
+- [x] User can add a new comment. 
 
-- [x] User sees app icon in home screen and styled launch screen. (1pt)
-- [x] User can sign up to create a new account. (1pt)
-- [x] User can log in. (1pt)
-- [x] User can take a photo, add a caption, and post it to the server. (3pt)
-- [x] User can view the last 20 posts. (4pts)
+- [x] User sees app icon in home screen and styled launch screen. 
+- [x] User can sign up to create a new account. 
+- [x] User can log in. 
+- [x] User can take a photo, add a caption, and post it to the server. 
+- [x] User can view the last 20 posts. 
 
-- [x] User can add a profile picture. (2pts)
-- [x] Profile pictures are shown for posts and comments. (2pts)
+- [x] User can add a profile picture. 
+- [x] Profile pictures are shown for posts and comments. 
 
-- [in progress] User can pull to refresh. (1pt)
-- [in progress] User can load past tweets infinitely. (2pts)
+- [in progress] User can pull to refresh.
+- [in progress] User can load past tweets infinitely.
 
 
 ## Video Walkthrough
